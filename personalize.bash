@@ -3,7 +3,7 @@ START_DIR=$(pwd)
 source ./install-yay.bash $START_DIR
 
 # install some packages
-yay -S menulibre ttf-delugia-code visual-studio-code-bin
+yay -S menulibre ttf-delugia-code visual-studio-code-bin microsoft-edge-stable-bin
 
 # install gnome extension
 git clone --depth=1 https://github.com/micheleg/dash-to-dock.git ~/dash-to-dock
@@ -24,8 +24,8 @@ cd ~/WhiteSur-gtk-theme
 ./install.sh -i arch
 ./tweaks.sh -d
 
-echo; read -p "Initialize Firefox then press ENTER to continue"
-EDITOR=vim ./tweaks.sh -e
+# echo; read -p "Initialize Firefox then press ENTER to continue"
+# EDITOR=vim ./tweaks.sh -e
 
 sudo ./tweaks.sh -g
 git checkout wallpapers

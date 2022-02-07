@@ -18,7 +18,7 @@ pacstrap /mnt base linux linux-firmware $VMWARE_AUXILIARY \
          grub $ESSENTIAL_PACKAGES \
          xorg gnome gnome-tweaks gnome-sound-recorder networkmanager sassc \
          ttf-croscore ttf-cascadia-code \
-         firefox docker docker-compose
+         docker docker-compose
 
 # fstab define how block devices should be mounted into the file system
 genfstab -U /mnt >> /mnt/etc/fstab
