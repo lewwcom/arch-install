@@ -19,7 +19,7 @@ cd $START_DIR
 rm -rf ~/{dash-to-dock,blur-my-shell}
 
 # install WhiteSur theme
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git ~/WhiteSur-gtk-theme
+git clone --depth=1 https://github.com/vinceliuice/WhiteSur-gtk-theme.git ~/WhiteSur-gtk-theme
 cd ~/WhiteSur-gtk-theme
 ./install.sh -i arch
 ./tweaks.sh -d
@@ -28,7 +28,8 @@ cd ~/WhiteSur-gtk-theme
 # EDITOR=vim ./tweaks.sh -e
 
 sudo ./tweaks.sh -g
-git checkout wallpapers
+git clone --depth=1 https://github.com/vinceliuice/WhiteSur-wallpapers.git ~/WhiteSur-wallpapers
+cd ~/WhiteSur-wallpapers
 sudo ./install-gnome-backgrounds.sh
 
 git clone --depth=1 https://github.com/vinceliuice/WhiteSur-icon-theme.git ~/WhiteSur-icon-theme
