@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # allow install man-pages
-sed -e "s/NoExtract[[:space:]]*=[[:space:]]*usr\/share\/man\/\*/# &/" /etc/pacman.conf 
+sed -i "s/NoExtract[[:space:]]*=[[:space:]]*usr\/share\/man\/\*/# &/" /etc/pacman.conf
 
 # install essential packages
 pacman-key --init
