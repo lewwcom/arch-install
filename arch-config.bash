@@ -44,9 +44,9 @@ echo; read -p "Username: " USER_NAME
 useradd -m -G wheel,docker $USER_NAME
 passwd $USER_NAME
 
-PERSONALIZE_PATH=$(eval echo "~$usr_name")/personalize
+PERSONALIZE_PATH=$(eval echo "~$USR_NAME")/personalize
 cp -r /src $PERSONALIZE_PATH
-chown -R $usr_name:$usr_name $PERSONALIZE_PATH
+chown -R $USR_NAME:$USR_NAME $PERSONALIZE_PATH
 
 # add root priviledges for wheel group
 echo; echo "Please uncomment %wheel ALL=(ALL) ALL"
