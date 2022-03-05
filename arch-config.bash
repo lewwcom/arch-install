@@ -24,8 +24,9 @@ echo; echo "Set root password"
 passwd
 
 # install grub
-echo; echo "Install Grub"; read -p "Root disk: "
-grub-install $REPLY 
+echo; echo "Install Grub"; # read -p "Root disk: "
+# grub-install $REPLY 
+grub-install --target=x86_64-efi --efi-directory=/mnt/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # enable NetworkManager
