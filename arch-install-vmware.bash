@@ -14,7 +14,8 @@ swapon $REPLY
 
 read -p "EFI partition: "
 mkfs.fat -F 32 $REPLY
-mount $REPLY /mnt/boot
+mkdir /mnt/efi
+mount $REPLY /mnt/efi # Boot indirectly using boot loader
 
 # install essential packages
 VMWARE_AUXILIARY="open-vm-tools xf86-video-vmware xf86-input-vmmouse"
