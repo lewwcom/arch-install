@@ -12,9 +12,13 @@ read -p "Swap partition: "
 mkswap $REPLY
 swapon $REPLY
 
+read -p "EFI partition: "
+mkfs.fat -F 32 $REPLY
+mount $REPLY /mnt/boot
+
 # install essential packages
 VMWARE_AUXILIARY="open-vm-tools xf86-video-vmware xf86-input-vmmouse"
-pacstrap /mnt base linux linux-firmware $VMWARE_AUXILIARY \
+pacstrap /mnt base linux linux-firmware \ # $VMWARE_AUXILIARY \
          grub $ESSENTIAL_PACKAGES \
          xorg gnome gnome-tweaks gnome-sound-recorder networkmanager sassc \
          ttf-croscore ttf-cascadia-code \
