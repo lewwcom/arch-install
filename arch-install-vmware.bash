@@ -19,10 +19,10 @@ mount $REPLY /mnt/boot
 # install essential packages
 VMWARE_AUXILIARY="open-vm-tools xf86-video-vmware xf86-input-vmmouse"
 pacstrap /mnt base linux linux-firmware \ # $VMWARE_AUXILIARY \
-         grub $ESSENTIAL_PACKAGES \
-         xorg gnome gnome-tweaks gnome-sound-recorder networkmanager sassc \
-         ttf-croscore ttf-cascadia-code \
-         docker docker-compose
+              grub efibootmgr $ESSENTIAL_PACKAGES \
+              xorg gnome gnome-tweaks gnome-sound-recorder networkmanager sassc \
+              ttf-croscore ttf-cascadia-code \
+              docker docker-compose
 
 # fstab define how block devices should be mounted into the file system
 genfstab -U /mnt >> /mnt/etc/fstab
