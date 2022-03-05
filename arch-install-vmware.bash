@@ -3,7 +3,7 @@
 # enable and start the first existing network synchronization service
 timedatectl set-ntp true
 
-# mount root and swap
+# mount root, efi and enable swap
 read -p "Root partition: "
 mkfs -t ext4 $REPLY
 mount $REPLY /mnt
