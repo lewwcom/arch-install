@@ -29,16 +29,17 @@ echo; echo "Install Grub"; # read -p "Root disk: "
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
+# enable Hyper-V integration services
+systemctl hv_fcopy_daemon hv_kvp_daemon hv_vss_daemon
+
 # enable NetworkManager
-systemctl enable NetworkManager
-systemctl enable systemd-resolved
+systemctl enable NetworkManager systemd-resolved
 
 # enable gnome login manager (display manager)
 systemctl enable gdm
 
 # enable docker
-systemctl enable docker
-systemctl enable containerd
+systemctl enable docker containerd
 
 # create user
 echo; read -p "Username: " USER_NAME
