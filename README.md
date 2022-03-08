@@ -11,7 +11,7 @@ Install and config yay, vim, gnome with WhiteSur theme.
 
 ## How to use
 
-### VMWare
+### Virtual Machine
 
 ```zsh
 git clone https://github.com/lewwcom/arch-install
