@@ -35,5 +35,4 @@ wsl --import distro_name install_location c/path/to/tar/arch.tar
 wsl -d distro_name
 ```
 
-Run arch-install.bash script
-
+Run `arch-install.bash` script
