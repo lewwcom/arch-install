@@ -28,7 +28,7 @@ docker run --name container_name archlinux
 docker export container_name > /mnt/c/path/to/tar/arch.tar
 ```
 
-Import arch.tar to wsl in PowerShell:
+Import `arch.tar` to wsl in PowerShell:
 
 ```powershell
 wsl --import distro_name install_location c/path/to/tar/arch.tar
