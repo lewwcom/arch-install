@@ -19,7 +19,8 @@ mount $REPLY /mnt/efi # Boot indirectly using boot loader
 
 # install essential packages
 VMWARE_AUXILIARY="open-vm-tools xf86-video-vmware xf86-input-vmmouse"
-pacstrap /mnt base linux linux-firmware \
+HYPERV_AUXILIARY="hyperv"
+pacstrap /mnt base linux linux-firmware $HYPERV_AUXILIARY \
               grub efibootmgr $ESSENTIAL_PACKAGES \
               xorg gnome gnome-tweaks gnome-sound-recorder networkmanager sassc \
               ttf-croscore ttf-cascadia-code \
