@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ESSENTIAL_PACKAGES="sudo polkit vim ranger git base-devel man-db man-pages texinfo tldr neofetch wget zip"
+ESSENTIAL_PACKAGES="sudo polkit vim ranger git base-devel man-db man-pages texinfo tldr neofetch wget zip unzip"
 
 echo "Platform: 1. WSL, 2. Virtual machine, 3. Real machine"
 read -p "Which platform to install? "
