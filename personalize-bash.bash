@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install starship
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+# sh -c "$(curl -fsSL https://starship.rs/install.sh)" -> Install using package manager
 echo "eval \"\$(starship init bash)\"" >> ~/.bashrc
 mkdir -p ~/.config
 cp starship.toml ~/.config
