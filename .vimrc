@@ -1,11 +1,20 @@
-set termguicolors
-colorscheme monokai_pro
+language en_US.utf8
+
+if has("termguicolors")
+    set termguicolors
+endif
+
+let g:sonokai_style="espresso"
+let g:sonokai_better_performance=1
+let g:sonokai_enable_italic=1
+let g:sonokai_transparent_background=1
+colorscheme sonokai
 syntax on
 
-set cursorline
 set number
+set cursorline
 
-let g:lightline = { 'colorscheme': 'monokai_pro' }
+let g:lightline={"colorscheme":"sonokai"}
 set laststatus=2
 set noshowmode
 
@@ -16,8 +25,3 @@ set expandtab
 set autoindent
 set smartindent
 
-hi Normal guibg=NONE
-hi NonText guifg=#FF9B5E guibg=NONE
-hi LineNr guifg=#FF9B5E guibg=NONE
-hi clear CursorLine
-hi clear CursorLineNr

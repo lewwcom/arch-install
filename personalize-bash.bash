@@ -8,15 +8,12 @@ cp starship.toml ~/.config
 
 # vim
 # install lightline
-git clone --depth=1 https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/"start"/lightline
-rm -rf ~/.vim/pack/plugins/"start"/lightline/.git
+git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/"start"/lightline
 
-# install monokai pro
-git clone --depth=1 https://github.com/phanviet/vim-monokai-pro.git ~/monokai
-mkdir -p ~/.vim/{colors,"autoload"/lightline/colorscheme}
-cp ~/monokai/colors/* ~/.vim/colors
-cp ~/monokai/"autoload"/lightline/colorscheme/* ~/.vim/"autoload"/lightline/colorscheme
-rm -rf ~/monokai
+# install sonokai
+git clone --depth=1 https://github.com/sainnhe/sonokai.git ~/sonokai
+cp -r ~/sonokai/{autoload,colors,doc} ~/.vim
+rm -rf ~/sonokai
 
 cp .vimrc ~
 
