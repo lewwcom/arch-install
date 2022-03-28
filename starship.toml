@@ -1,10 +1,11 @@
-add_newline = false
-
 [username]
 show_always = true
 
 [aws]
 symbol = "  "
+
+[buf]
+symbol = " "
 
 [conda]
 symbol = " "
@@ -30,6 +31,9 @@ symbol = " "
 [golang]
 symbol = " "
 
+[haskell]
+symbol = " "
+
 [hg_branch]
 symbol = " "
 
@@ -48,29 +52,12 @@ symbol = " "
 [nix_shell]
 symbol = " "
 
+[nodejs]
+symbol = " "
+
 [package]
 symbol = " "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[python]
-symbol = " "
-
-[ruby]
-symbol = " "
 
 [rust]
 symbol = " "
 
-[scala]
-symbol = " "
-
-[shlvl]
-symbol = " "
-
-[swift]
-symbol = "ﯣ "
