@@ -54,4 +54,3 @@ EDITOR=vim visudo
 PERSONALIZE_PATH=$(eval echo "~$USER_NAME")/arch-install
 cp -r /src $PERSONALIZE_PATH
 chown -R $USER_NAME:$USER_NAME $PERSONALIZE_PATH
-su -P -c "cd $PERSONALIZE_PATH; source ./personalize.bash" $USER_NAME

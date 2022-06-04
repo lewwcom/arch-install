@@ -7,6 +7,6 @@ cd ${1}
 rm -rf ~/yay
 
 # yay development packages upgrade
-yay -Y --gendb
-yay -Syu --devel
-yay -Y --devel --save
+yay -Y --gendb --noconfirm
+yay -Syu --devel --noconfirm
+yay -Y --devel --save --noconfirm

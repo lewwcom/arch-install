@@ -35,6 +35,7 @@ cp * .vimrc /mnt/src
 arch-chroot /mnt bash /src/arch-config.bash
 
 rm -rf /mnt/src
+echo; echo "Remember to run personalize script in HOME/arch-install folder"
 read -p "System will reboot after you press ENTER"
 shutdown -r now
 

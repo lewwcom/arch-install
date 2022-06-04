@@ -5,7 +5,7 @@ START_DIR=$(pwd)
 source ./install-yay.bash $START_DIR
 
 # install some packages
-yay -S menulibre ttf-delugia-code visual-studio-code-bin microsoft-edge-stable-bin
+yay -S --noconfirm menulibre ttf-delugia-code visual-studio-code-bin microsoft-edge-stable-bin
 
 # set gnome keybindings
 dconf load /org/gnome/shell/keybindings/ < shell-keybindings
