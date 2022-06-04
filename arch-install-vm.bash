@@ -22,7 +22,7 @@ VMWARE_AUXILIARY="open-vm-tools xf86-video-vmware xf86-input-vmmouse"
 HYPERV_AUXILIARY="hyperv"
 pacstrap /mnt base linux linux-firmware $VMWARE_AUXILIARY \
               grub efibootmgr $ESSENTIAL_PACKAGES \
-              xorg gnome gnome-tweaks gnome-sound-recorder networkmanager sassc \
+              xorg gnome gnome-tweaks gnome-software-packagekit-plugin gnome-sound-recorder networkmanager sassc \
               ttf-croscore ttf-cascadia-code \
               docker docker-compose
 
