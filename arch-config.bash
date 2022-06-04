@@ -11,11 +11,11 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo; read -p "Hostname: "
 echo $REPLY > /etc/hostname
 
-# purpose of an initramfs is to mount the root filesystem. The initramfs is a 
-# complete set of directories on a normal root filesystem. It is bundled into 
+# purpose of an initramfs is to mount the root filesystem. The initramfs is a
+# complete set of directories on a normal root filesystem. It is bundled into
 # a single archive and compressed
-# At boot time, the boot loader loads the kernel and the initramfs image into 
-# memory and starts the kernel. The kernel checks for the presence of the 
+# At boot time, the boot loader loads the kernel and the initramfs image into
+# memory and starts the kernel. The kernel checks for the presence of the
 # initramfs and, if found, mounts it as / and runs /init.
 mkinitcpio -P
 
@@ -25,12 +25,12 @@ passwd
 
 # install grub
 echo; echo "Install Grub"; # read -p "Root disk: "
-# grub-install $REPLY 
+# grub-install $REPLY
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # enable Hyper-V integration services
-systemctl hv_fcopy_daemon hv_kvp_daemon hv_vss_daemon
+# systemctl hv_fcopy_daemon hv_kvp_daemon hv_vss_daemon
 
 # enable NetworkManager
 systemctl enable NetworkManager systemd-resolved
@@ -46,12 +46,12 @@ echo; read -p "Username: " USER_NAME
 useradd -m -G wheel,docker $USER_NAME
 passwd $USER_NAME
 
-PERSONALIZE_PATH=$(eval echo "~$USER_NAME")/personalize
-cp -r /src $PERSONALIZE_PATH
-chown -R $USER_NAME:$USER_NAME $PERSONALIZE_PATH
-
 # add root priviledges for wheel group
 echo; echo "Please uncomment %wheel ALL=(ALL) ALL"
 read -p "Press ENTER to continue"
 EDITOR=vim visudo
 
+PERSONALIZE_PATH=$(eval echo "~$USER_NAME")/arch-install
+cp -r /src $PERSONALIZE_PATH
+chown -R $USER_NAME:$USER_NAME $PERSONALIZE_PATH
+su -P -c "source $PERSONALIZE_PATH/personalize.bash" $USER_NAME

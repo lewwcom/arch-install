@@ -20,7 +20,7 @@ mount $REPLY /mnt/efi # Boot indirectly using boot loader
 # install essential packages
 VMWARE_AUXILIARY="open-vm-tools xf86-video-vmware xf86-input-vmmouse"
 HYPERV_AUXILIARY="hyperv"
-pacstrap /mnt base linux linux-firmware $HYPERV_AUXILIARY \
+pacstrap /mnt base linux linux-firmware $VMWARE_AUXILIARY \
               grub efibootmgr $ESSENTIAL_PACKAGES \
               xorg gnome gnome-tweaks gnome-sound-recorder networkmanager sassc \
               ttf-croscore ttf-cascadia-code \
@@ -35,7 +35,6 @@ cp * .vimrc /mnt/src
 arch-chroot /mnt bash /src/arch-config.bash
 
 rm -rf /mnt/src
-echo "Remember to run personalize script in HOME/personalize folder"
 read -p "System will reboot after you press ENTER"
 shutdown -r now
 

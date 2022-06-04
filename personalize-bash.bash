@@ -4,16 +4,10 @@
 # sh -c "$(curl -fsSL https://starship.rs/install.sh)" -> Install using package manager
 echo "eval \"\$(starship init bash)\"" >> ~/.bashrc
 mkdir -p ~/.config
-cp starship.toml ~/.config
+curl https://starship.rs/presets/toml/nerd-font-symbols.toml --output ~/.config/starship.toml
 
-# vim
-# install lightline
-git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/"start"/lightline
-
-# install sonokai
-git clone --depth=1 https://github.com/sainnhe/sonokai.git ~/sonokai
-cp -r ~/sonokai/{autoload,colors,doc} ~/.vim
-rm -rf ~/sonokai
+# install lightline - vim
+git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
 
 cp .vimrc ~
 
@@ -21,4 +15,3 @@ cp .vimrc ~
 git config --global user.name "lewwcom"
 git config --global user.email "lewwcom@outlook.com"
 git config --global alias.graph "log --oneline --graph --all"
-

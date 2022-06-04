@@ -5,10 +5,6 @@
 - [Arch Installation guide](https://wiki.archlinux.org/title/Installation_guide)
 - [Import any Linux distribution to use with WSL](https://docs.microsoft.com/en-us/windows/wsl/use-custom-distro)
 
-## Intro
-
-Install and config yay, vim, gnome with WhiteSur theme.
-
 ## How to use
 
 ### Virtual Machine
