@@ -1,15 +1,27 @@
 #!/bin/bash
 
-# install starship
+# starship
 # sh -c "$(curl -fsSL https://starship.rs/install.sh)" -> Install using package manager
-echo "eval \"\$(starship init bash)\"" >> ~/.bashrc
 mkdir -p ~/.config
 curl https://starship.rs/presets/toml/nerd-font-symbols.toml --output ~/.config/starship.toml
+echo '
+[username]
+show_always = true
+format = "[$user]($style)@(bold dimmed)"
+
+[hostname]
+ssh_only = false
+format = "[$hostname $ssh_symbol]($style)in "
+style = "bold yellow"
+
+[time]
+disabled = false
+time_format = "%R"' >> ~/.config/starship.toml
 
 # install lightline - vim
 git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
 
-cp .vimrc ~
+cp .bashrc .vimrc ~
 
 # git
 git config --global user.name "lewwcom"
