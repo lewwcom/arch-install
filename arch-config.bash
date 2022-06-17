@@ -35,6 +35,10 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # enable NetworkManager
 systemctl enable NetworkManager systemd-resolved
 
+# ping needs to be able to create a raw network socket ~ privileged action
+# add SUID (set owner user ID up on execution) permission for superuser's ping
+chmod u+s $(which ping)
+
 # enable gnome login manager (display manager)
 systemctl enable gdm
 

@@ -8,6 +8,10 @@ pacman-key --init
 pacman -Syyu
 pacman -Sy $ESSENTIAL_PACKAGES go
 
+# ping needs to be able to create a raw network socket ~ privileged action
+# add SUID (set owner user ID up on execution) permission for superuser's ping
+chmod u+s $(which ping)
+
 # create user
 echo; read -p "Username: " USER_NAME
 useradd -m -G wheel $USER_NAME
