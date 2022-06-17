@@ -10,3 +10,6 @@ alias ls="ls --color=auto"
 # cat with syntax highlighting
 alias cat="bat"
 export BAT_THEME=base16-256
+
+# htop: interactive process viewer
+alias top="htop"
