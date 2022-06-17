@@ -2,7 +2,7 @@
 [[ $- != *i* ]] && return
 
 # Bash prompt
-export PS1='\n\[\e[0;1m\]\u\[\e[0;1;2m\]@\[\e[0;1m\]\h \[\e[0m\]in \[\e[0;1m\]\W \[\e[0m\](\[\e[0;2m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)\[\e[0m\])\n\[\e[0;2m\]at \[\e[0;1m\]\A \[\e[0m\]\$ \[\e[0m\]'
+export PS1="\n\[$(tput bold)\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\h\[$(tput sgr0)\]:\w \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\n[\A] \\$ \[$(tput sgr0)\]"
 eval "$(starship init bash)"
 
 alias ls="ls --color=auto"
