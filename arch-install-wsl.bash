@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm /.dockerenv
+
 # allow install man-pages
 sed -i "s/NoExtract[[:space:]]*=[[:space:]]*usr\/share\/man\/\*/# &/" /etc/pacman.conf
 
@@ -29,4 +31,3 @@ su -P -c "source ./install-yay.bash $START_DIR; source ./personalize-bash.bash" 
 
 echo; read -p "Press ENTER to exit"
 exit
-
