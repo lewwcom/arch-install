@@ -31,7 +31,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 # run config script after chroot
 mkdir /mnt/src
-cp * .vimrc /mnt/src
+cp * .bashrc .vimrc /mnt/src
 arch-chroot /mnt bash /src/arch-config.bash
 
 rm -rf /mnt/src
