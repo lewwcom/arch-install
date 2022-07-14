@@ -14,3 +14,7 @@ export BAT_THEME=base16
 # htop: interactive process viewer
 alias top="htop"
 
+function init-repo() {
+    echo '* text=auto eol=lf' > .gitattributes
+    git init
+}
