@@ -15,6 +15,8 @@ export BAT_THEME=base16
 alias top="htop"
 
 function init-repo() {
-    echo '* text=auto eol=lf' > .gitattributes
-    git init
+    local dir=.
+    if [ "$#" -gt  "0" ]; then dir=$1; mkdir -p $1; fi
+    echo '* text=auto eol=lf' > $dir/.gitattributes
+    git init $dir
 }
