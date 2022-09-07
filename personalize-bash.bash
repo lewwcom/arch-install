@@ -27,3 +27,8 @@ cp .bashrc .vimrc ~
 git config --global user.name "lewwcom"
 git config --global user.email "lewwcom@outlook.com"
 git config --global alias.graph "log --oneline --graph --all"
+git config --global diff.tool "difftastic"
+git config --global difftool.prompt false
+git config --global difftool.difftastic.cmd 'difft "$LOCAL" "$REMOTE"'
+git config --global pager.difftool true
+git config --global alias.dft "difftool"
