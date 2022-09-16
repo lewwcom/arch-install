@@ -2,17 +2,37 @@ language en_US.utf8
 
 syntax on
 
+"===============================================================================
+" Line number
+" https://jeffkreeftmeijer.com/vim-number/
+"===============================================================================
 set number
-set cursorline
-set t_Co=16
-hi clear CursorLine
-hi clear CursorLineNR
-" Comment the line below when using with vim for Windows
-let g:lightline = { 'colorscheme': '16color' }
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
 
+"===============================================================================
+" Display
+"===============================================================================
+set colorcolumn=81
+set cursorline
+set t_Co=256
+highlight clear CursorLine
+highlight clear CursorLineNR
+highlight LineNr ctermfg=grey
+
+"===============================================================================
+" lightline
+"===============================================================================
+let g:lightline = { 'colorscheme': 'Tomorrow_Night_Blue' }
 set laststatus=2
 set noshowmode
 
+"===============================================================================
+" Tab, indent and backspace
+"===============================================================================
 set tabstop=4
 set softtabstop=-1
 set shiftwidth=0
@@ -21,6 +41,9 @@ set autoindent
 set smartindent
 set backspace=indent,eol,start
 
+"===============================================================================
+" Auto close brackets
+"===============================================================================
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
