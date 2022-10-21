@@ -21,9 +21,11 @@ passwd $USER_NAME
 echo -e "[user]\ndefault=$USER_NAME" >> /etc/wsl.conf
 
 # add root priviledges for wheel group
-echo; echo "Please uncomment %wheel ALL=(ALL) ALL"
-read -p "Press ENTER to continue"
-EDITOR=vim visudo
+# echo; echo "Please uncomment %wheel ALL=(ALL) ALL"
+# read -p "Press ENTER to continue"
+# EDITOR=vim visudo
+mkdir -p /etc/sudoers.d
+echo '%wheel ALL=(ALL:ALL) ALL' > /etc/sudoers.d/allow-wheel
 
 START_DIR=$(pwd)
 chown $USER_NAME:$USER_NAME *

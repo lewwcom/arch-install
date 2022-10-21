@@ -51,9 +51,11 @@ useradd -m -G wheel,docker $USER_NAME
 passwd $USER_NAME
 
 # add root priviledges for wheel group
-echo; echo "Please uncomment %wheel ALL=(ALL) ALL"
-read -p "Press ENTER to continue"
-EDITOR=vim visudo
+# echo; echo "Please uncomment %wheel ALL=(ALL) ALL"
+# read -p "Press ENTER to continue"
+# EDITOR=vim visudo
+mkdir -p /etc/sudoers.d
+echo '%wheel ALL=(ALL:ALL) ALL' > /etc/sudoers.d/allow-wheel
 
 PERSONALIZE_PATH=$(eval echo "~$USER_NAME")/arch-install
 cp -r /src $PERSONALIZE_PATH
