@@ -26,6 +26,7 @@ cp .bashrc .vimrc ~
 # git
 git config --global user.name "lewwcom"
 git config --global user.email "lewwcom@outlook.com"
+git config --global core.editor "vim"
 git config --global alias.graph "log --oneline --graph --all"
 git config --global diff.tool "difftastic"
 git config --global difftool.prompt false
