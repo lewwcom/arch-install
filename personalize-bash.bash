@@ -33,3 +33,4 @@ git config --global difftool.prompt false
 git config --global difftool.difftastic.cmd 'difft "$LOCAL" "$REMOTE"'
 git config --global pager.difftool true
 git config --global alias.dft "difftool"
+git config --global init.defaultBranch master
