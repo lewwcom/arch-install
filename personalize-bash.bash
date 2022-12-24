@@ -4,6 +4,9 @@
 # sh -c "$(curl -fsSL https://starship.rs/install.sh)" -> Install using package manager
 mkdir -p ~/.config
 starship preset nerd-font-symbols > ~/.config/starship.toml
+echo '
+[os]
+disabled = false' >> ~/.config/starship.toml
 # echo '
 # [username]
 # show_always = true
