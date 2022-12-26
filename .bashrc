@@ -29,6 +29,9 @@ function gen-gi() {
     curl -sL https://www.toptal.com/developers/gitignore/api/$@
 }
 
+export LEWWCOM_REPO=https://github.com/lewwcom
+
+# Docker
 function update-docker-images() {
     docker images --format '{{.Repository}}:{{.Tag}}' |
     xargs --max-args=1 --no-run-if-empty docker pull
