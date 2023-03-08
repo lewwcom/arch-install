@@ -23,6 +23,14 @@ function init-repo() {
     if [ "$#" -gt  "0" ]; then dir=$1; mkdir -p $1; fi
     echo '* text=auto eol=lf' > $dir/.gitattributes
     git init $dir
+
+    local username=$(git config --get user.name)
+    read -p "Username (default: $username): " username
+    git config user.name "$username"
+
+    local email=$(git config --get user.email)
+    read -p "Email (default: $email): " email
+    git config user.email $email
 }
 
 function gen-gi() {
