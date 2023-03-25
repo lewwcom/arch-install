@@ -25,12 +25,16 @@ function init-repo() {
     git init $dir
 
     local username=$(git config --get user.name)
-    read -p "Username (default: $username): " username
-    git config user.name "$username"
+    read -p "Username (default: $username): " new_username
+    if [ ! -z "$new_username" ]; then
+        git config user.name "$new_username"
+    fi
 
     local email=$(git config --get user.email)
-    read -p "Email (default: $email): " email
-    git config user.email $email
+    read -p "Email (default: $email): " new_email
+    if [ ! -z "$new_email" ]; then
+        git config user.email "$new_email"
+    fi
 }
 
 function gen-gi() {
