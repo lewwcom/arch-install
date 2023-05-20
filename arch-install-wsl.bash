@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# set timezone, locale
+ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+hwclock --systohc
+echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+
 rm /.dockerenv
 
 # allow install man-pages
