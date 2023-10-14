@@ -36,7 +36,7 @@ echo '%wheel ALL=(ALL:ALL) ALL' > /etc/sudoers.d/allow-wheel
 
 START_DIR=$(pwd)
 chown $USER_NAME:$USER_NAME *
-su -P -c "source ./install-yay.bash $START_DIR; source ./personalize-bash.bash" $USER_NAME
+su -P -c "source ./install-yay.sh $START_DIR; source ./personalize-bash.sh" $USER_NAME
 
 echo; read -p "Press ENTER to exit"
 exit

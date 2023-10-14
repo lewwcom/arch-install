@@ -32,7 +32,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 # run config script after chroot
 mkdir /mnt/src
 cp * .bashrc .vimrc /mnt/src
-arch-chroot /mnt bash /src/arch-config.bash
+arch-chroot /mnt bash /src/arch-config.sh
 
 rm -rf /mnt/src
 echo; echo "Remember to run personalize script in HOME/arch-install folder"

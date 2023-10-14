@@ -12,7 +12,7 @@
 ```zsh
 git clone https://github.com/lewwcom/arch-install
 cd arch-install
-bash arch-install.bash
+bash arch-install.sh
 ```
 
 ### WSL
@@ -31,4 +31,4 @@ wsl --import distro_name install_location c/path/to/tar/arch.tar
 wsl -d distro_name
 ```
 
-Run `arch-install.bash` script
+Run `arch-install.sh` script
