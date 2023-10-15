@@ -20,15 +20,20 @@ bash arch-install.sh
 Integrate Docker with Ubuntu WSL. In Bash of Ubuntu WSL run:
 
 ```bash
-docker run --name container_name archlinux
-docker export container_name > /mnt/c/path/to/tar/arch.tar
+# cd to Windows location (/mnt/c/...)
+CONTAINER_NAME=archlinux
+docker run --name $CONTAINER_NAME archlinux
+docker export $CONTAINER_NAME > $(pwd)/arch.tar
+docker rm --force $CONTAINER_NAME
 ```
 
 Import `arch.tar` to wsl in PowerShell:
 
 ```powershell
-wsl --import distro_name install_location c/path/to/tar/arch.tar
-wsl -d distro_name
+$TarLocation = "$(Get-Location)\arch.tar"
+$InstallLocation = "~\WSL Distros\Arch Linux"
+wsl --import archlinux $InstallLocation $TarLocation
+wsl -d archlinux
 ```
 
 Run `arch-install.sh` script
