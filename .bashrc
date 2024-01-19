@@ -17,6 +17,9 @@ export BAT_THEME=base16
 # htop: interactive process viewer
 alias top="htop"
 
+# weather
+alias weather="curl wttr.in"
+
 # Git
 function init-repo() {
     local dir=.
