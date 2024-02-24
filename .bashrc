@@ -9,6 +9,7 @@ export PS1="\n\[$(tput bold)\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\h\[$(tput sgr0
 eval "$(starship init bash)"
 
 alias ls="ls --color=auto"
+alias grep="grep --color=always"
 
 # cat with syntax highlighting
 alias cat="bat"
