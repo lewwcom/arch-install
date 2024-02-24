@@ -15,7 +15,7 @@ alias cat="bat"
 export BAT_THEME=base16
 
 # htop: interactive process viewer
-alias top="htop"
+alias top="sudo htop"
 
 # weather
 alias weather="curl wttr.in"
