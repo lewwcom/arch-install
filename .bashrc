@@ -47,6 +47,15 @@ function gen-gi() {
 
 export LEWWCOM_REPO=https://github.com/lewwcom
 
+function codecommit-clone {
+    local repo=$1
+    local url=$(
+        aws codecommit get-repository --repository-name "$repo" | 
+            jq -r '.repositoryMetadata.cloneUrlHttp'
+    )
+    git clone "$url"
+}
+
 # Docker
 function update-docker-images() {
     docker images --format '{{.Repository}}:{{.Tag}}' |
