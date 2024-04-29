@@ -49,11 +49,12 @@ export LEWWCOM_REPO=https://github.com/lewwcom
 
 function codecommit-clone {
     local repo=$1
+    local dest=$2
     local url=$(
         aws codecommit get-repository --repository-name "$repo" | 
             jq -r '.repositoryMetadata.cloneUrlHttp'
     )
-    git clone "$url"
+    git clone "$url" $2
 }
 
 # Docker
