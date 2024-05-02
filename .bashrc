@@ -51,10 +51,28 @@ function codecommit-clone {
     local repo=$1
     local dest=$2
     local url=$(
-        aws codecommit get-repository --repository-name "$repo" | 
+        aws codecommit get-repository --repository-name "$repo" |
             jq -r '.repositoryMetadata.cloneUrlHttp'
     )
     git clone "$url" $2
+}
+
+function download-latest-gh-release {
+    local repo=$1
+    local file_name_pattern=$2
+
+    # `cut --delimiter '"' --fields 4` doesn't work on macOS
+    local download_url=$(
+        curl --fail --silent --show-error --location \
+            https://api.github.com/repos/localstack/localstack-cli/releases/latest |
+            jq --raw-output "
+                .assets[]
+                | select(.name | test(\"$file_name_pattern\"))
+                | .browser_download_url"
+    )
+
+    echo Downloading $download_url
+    curl --location --remote-name "$download_url"
 }
 
 # Docker
