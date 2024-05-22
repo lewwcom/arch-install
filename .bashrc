@@ -1,14 +1,35 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# thefuck: a magnificient app that corrects errors in previous console commands
+eval $(thefuck --alias)
+
 # McFly: replace your default ctrl-r
-eval "$(mcfly init bash)"
+# eval "$(mcfly init bash)"
+
+# fzf: fzf is a general-purpose command-line fuzzy finder
+eval "$(fzf --bash)"
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'tree -C {} | head -200'   "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview 'bat -n --color=always {}' "$@" ;;
+  esac
+}
 
 # Bash prompt
 export PS1="\n\[$(tput bold)\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\h\[$(tput sgr0)\]:\w \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\n[\A] \\$ \[$(tput sgr0)\]"
 eval "$(starship init bash)"
 
-alias ls="ls --color=auto"
+alias ls="ls --color=always"
 alias grep="grep --color=always"
 
 # cat with syntax highlighting
