@@ -32,6 +32,10 @@ eval "$(starship init bash)"
 alias ls="ls --color=always"
 alias grep="grep --color=always"
 
+function cpp() {
+    cp "$@" & progress --monitor --pid $!
+}
+
 # cat with syntax highlighting
 alias cat="bat"
 export BAT_THEME=base16
