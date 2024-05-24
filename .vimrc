@@ -30,11 +30,13 @@ set noshowmode
 
 "===============================================================================
 " Tab, indent and backspace
+" https://gist.github.com/LunarLambda/4c444238fb364509b72cfb891979f1dd
 "===============================================================================
 set tabstop=4
 set softtabstop=-1
 set shiftwidth=0
 set expandtab
+
 set autoindent
 set smartindent
 set backspace=indent,eol,start
@@ -49,4 +51,9 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
+"===============================================================================
+" Invisible characters
+"===============================================================================
+:set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 
