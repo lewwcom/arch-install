@@ -30,7 +30,7 @@ cp .bashrc .vimrc ~
 git config --global user.name "lewwcom"
 git config --global user.email "lewwcom@outlook.com"
 git config --global core.editor "vim"
-git config --global alias.graph "log --oneline --graph --all"
+git config --global alias.graph "log --graph --pretty=format:'%C(auto)%h%d %s %C(bold black)(%ar by <%aN>)%Creset'"
 git config --global init.defaultBranch master
 
 git config --global core.pager 'delta'
